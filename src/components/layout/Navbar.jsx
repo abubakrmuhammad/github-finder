@@ -1,24 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Navbar({ icon, title }) {
   return (
-    <nav className='navbar bg-primary'>
-      <Link to='/'>
-        <h1>
+    <header className='bg-blue-600 text-white py-6'>
+      <div className='w-11/12 flex items-center mx-auto'>
+        <Link to='/' className='font-semibold text-xl'>
           <i className={icon} /> {title}
-        </h1>
-      </Link>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-      </ul>
-    </nav>
+        </Link>
+
+        <nav className='flex ml-auto'>
+          <NavLink
+            exact
+            to='/'
+            activeStyle={{ color: '#fff' }}
+            className='mx-4 text-blue-200 hover:text-white'
+          >
+            Home
+          </NavLink>
+          <NavLink
+            exact
+            to='/about'
+            activeStyle={{ color: '#fff' }}
+            className='mx-4 text-blue-200 hover:text-white'
+          >
+            About
+          </NavLink>
+        </nav>
+      </div>
+    </header>
   );
 }
 
