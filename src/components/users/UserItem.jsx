@@ -4,19 +4,21 @@ import PropTypes from 'prop-types';
 
 function UserItem({ user: { login, avatar_url } }) {
   return (
-    <div className='card text-center'>
-      <img
-        src={avatar_url}
-        alt={login}
-        className='round-img'
-        style={{ width: '100px' }}
-      />
-      <h3>{login}</h3>
-      <div>
-        <Link to={`/user/${login}`} className='btn btn-dark btn-sm my-1'>
+    <div className='w-1/3 p-4'>
+      <figure className='bg-white rounded-lg overflow-hidden shadow-lg text-center p-6'>
+        <img
+          src={avatar_url}
+          alt={login}
+          className='rounded-full h-32 w-32 mx-auto'
+        />
+        <figcaption className='text-2xl mt-2 mb-4'>{login}</figcaption>
+        <Link
+          to={`/user/${login}`}
+          className='bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded'
+        >
           More
         </Link>
-      </div>
+      </figure>
     </div>
   );
 }

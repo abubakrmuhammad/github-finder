@@ -3,7 +3,7 @@ import GithubContext from '../../context/github/GithubContext';
 import AlertContext from '../../context/alert/AlertContext';
 
 function Search() {
-  const { searchUsers, clearUsers, users } = useContext(GithubContext);
+  const { searchUsers } = useContext(GithubContext);
   const { showAlert, removeAlert } = useContext(AlertContext);
 
   const [searchText, setSearchText] = useState('');
@@ -43,11 +43,6 @@ function Search() {
           Search
         </button>
       </form>
-      {users.length > 0 && (
-        <button className='btn btn-light btn-block' onClick={clearUsers}>
-          Clear
-        </button>
-      )}
     </Fragment>
   );
 }
