@@ -8,8 +8,8 @@ function AlertState({ children }) {
 
   const [state, dispatch] = useReducer(alertReducer, initialState);
 
-  const showAlert = (message, type) =>
-    dispatch({ type: SET_ALERT, payload: { message, type } });
+  const showAlert = message =>
+    dispatch({ type: SET_ALERT, payload: { message } });
 
   const removeAlert = () => dispatch({ type: REMOVE_ALERT });
 
