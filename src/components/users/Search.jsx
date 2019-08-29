@@ -22,15 +22,24 @@ function Search() {
 
   return (
     <Fragment>
-      <form className='form' onSubmit={formSubmitHandler}>
+      <form
+        className='w-4/6 flex bg-white shadow-md rounded px-8 py-6 my-8 mx-auto'
+        onSubmit={formSubmitHandler}
+      >
         <input
+          className='shadow appearance-none border rounded flex-grow py-2 px-3 text-gray-700 leading-tight focus:ouline-none focus:shadow-outline'
           type='text'
           name='searchText'
           placeholder='Search Users...'
           value={searchText}
           onChange={inputChangeHandler}
+          autoFocus
         />
-        <button type='submit' className='btn btn-dark btn-block'>
+
+        <button
+          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-6 rounded focus:outline-none focus:shadow-outline'
+          type='submit'
+        >
           Search
         </button>
       </form>

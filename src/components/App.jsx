@@ -15,7 +15,7 @@ function App() {
         <Router>
           <Fragment>
             <Navbar />
-            <main className='container'>
+            <main className='w-3/4 mx-auto'>
               <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/user/:username' component={User} />
