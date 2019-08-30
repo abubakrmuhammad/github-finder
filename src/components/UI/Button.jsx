@@ -15,27 +15,26 @@ function Button({ children, color, className, variant, ...props }) {
 
   const { bgColor, hoverBg } = types[color];
 
+  let classes;
+
   switch (variant) {
     case 'inline':
-      return (
-        <button
-          className={`${className} font-bold text-sm  text-${bgColor} hover:text-${hoverBg} focus:outline-none `}
-        >
-          {children}
-        </button>
-      );
+      classes = `font-bold text-sm  text-${bgColor} hover:text-${hoverBg} focus:outline-none`;
+      break;
     case 'block':
-      return (
-        <button
-          className={`inline-block bg-${bgColor} hover:bg-${hoverBg} text-white font-bold py-2 px-4 rounded ${className}`}
-          {...props}
-        >
-          {children}
-        </button>
-      );
+      classes = `inline-block bg-${bgColor} hover:bg-${hoverBg} text-white font-bold py-2 px-4 rounded`;
+      break;
     default:
-      return null;
+      classes = `${className}`;
   }
+
+  classes = `${className} ${classes}`;
+
+  return (
+    <button className={classes} {...props}>
+      {children}
+    </button>
+  );
 }
 
 Button.defaultProps = {
