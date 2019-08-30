@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project is from [Brad Traversy](https://www.udemy.com/user/brad-traversy/) Course on Udemy titled [React Front to Back 2019](https://www.udemy.com/modern-react-front-to-back/).
 
+## Technologies
+
 This project uses the following technologies:
 
 - React
@@ -12,6 +14,8 @@ This project uses the following technologies:
 - React Hooks
 - Tailwind CSS
 - Github RESTful API v3
+
+## Features
 
 Search for Github Users.
 
