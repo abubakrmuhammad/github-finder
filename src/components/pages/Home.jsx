@@ -9,8 +9,8 @@ function Home() {
 
   return (
     <Fragment>
-      {alert && <Alert {...alert} type="warning" onClose={removeAlert} />}
       <Search />
+      {alert && <Alert {...alert} type='warning' onClose={removeAlert} />}
       <Users />
     </Fragment>
   );

@@ -20,7 +20,7 @@ const Alert = ({ message, type, onClose, width, timeout }) => {
 
   return (
     <div
-      className={`bg-${color}-100 border border-${color}-400 text-${color}-700 px-4 py-3 rounded relative mt-6 mx-auto`}
+      className={`bg-${color}-100 border border-${color}-400 text-${color}-700 px-4 py-3 rounded relative my-6 mx-auto`}
       style={{ width }}
     >
       <i className={`fas fa-${icon} mr-2`} /> {message}
