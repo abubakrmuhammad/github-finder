@@ -1,24 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Card from '../UI/Card';
+import Button from '../UI/Button';
 
 function UserItem({ user: { login, avatar_url } }) {
   return (
     <div className='w-1/3 p-4'>
-      <figure className='bg-white rounded-lg overflow-hidden shadow-lg text-center p-6'>
+      <Card className='text-center p-6'>
         <img
           src={avatar_url}
           alt={login}
           className='rounded-full h-32 w-32 mx-auto'
         />
-        <figcaption className='text-2xl mt-2 mb-4'>{login}</figcaption>
-        <Link
-          to={`/user/${login}`}
-          className='bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded'
-        >
-          More
+        <p className='text-2xl mt-2 mb-4'>{login}</p>
+        <Link to={`/user/${login}`}>
+          <Button variant='block' color='dark'>
+            More
+          </Button>
         </Link>
-      </figure>
+      </Card>
     </div>
   );
 }

@@ -1,8 +1,11 @@
 import React, { Fragment, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Spinner from '../layout/Spinner';
+import Spinner from '../UI/Spinner';
 import Repos from '../repos/Repos';
 import GithubContext from '../../context/github/GithubContext';
+import Button from '../UI/Button';
+import Card from '../UI/Card';
+import Badge from '../UI/Badge';
 
 function User({ match }) {
   const { loading, getUser, getUserRepos, user, repos } = useContext(
@@ -49,11 +52,17 @@ function User({ match }) {
 
   return (
     <Fragment>
-      <Link to='/' className='inline-block font-bold my-6 hover:text-blue-500'>
-        <i className='fas fa-long-arrow-alt-left pr-1' /> Back to Search
+      <Link to='/'>
+        <Button
+          variant='inline'
+          color='dark'
+          className='my-6 hover:text-blue-500'
+        >
+          <i className='fas fa-long-arrow-alt-left pr-1' /> Back to Search
+        </Button>
       </Link>
 
-      <section className='flex items-start rounded-lg shadow-lg text-gray-900 bg-white py-12 pr-24 mb-6'>
+      <Card className='flex items-start py-12 pr-24 mb-6'>
         <div className='w-2/5 text-center'>
           <img
             src={avatar_url}
@@ -71,13 +80,10 @@ function User({ match }) {
           <h2 className='text-xl font-bold'>Bio</h2>
           <p className='text-gray-800'>{isAvailable(bio)}</p>
 
-          <a
-            href={html_url}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-block rounded bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 my-6'
-          >
-            Github Profile
+          <a href={html_url} target='_blank' rel='noopener noreferrer'>
+            <Button color='dark' className='my-6'>
+              Github Profile
+            </Button>
           </a>
 
           <div
@@ -101,21 +107,21 @@ function User({ match }) {
             <span>{isHirableIcon(hireable)}</span>
           </div>
         </div>
-      </section>
+      </Card>
 
       <section className='flex justify-center rounded-lg shadow-lg text-xs text-white font-bold bg-white py-6 mb-6'>
-        <span className='bg-teal-500 py-1 px-3 mr-2 rounded-full'>
+        <Badge color='teal' className='mr-2'>
           {followers} Followers
-        </span>
-        <span className='bg-green-500 py-1 px-3 mr-2 rounded-full'>
+        </Badge>
+        <Badge color='green' className='mr-2'>
           {following} Following
-        </span>
-        <span className='bg-blue-500 py-1 px-3 mr-2 rounded-full'>
+        </Badge>
+        <Badge color='blue' className='mr-2'>
           {public_repos} Public Repos
-        </span>
-        <span className='bg-purple-500 py-1 px-3 mr-2 rounded-full'>
+        </Badge>
+        <Badge color='purple' className='mr-2'>
           {public_gists} Public Gists
-        </span>
+        </Badge>
       </section>
       <Repos repos={repos} />
     </Fragment>

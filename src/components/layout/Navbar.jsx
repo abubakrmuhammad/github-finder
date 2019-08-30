@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import NavLink from '../UI/NavLink';
 
 function Navbar({ icon, title }) {
   return (
@@ -11,22 +12,8 @@ function Navbar({ icon, title }) {
         </Link>
 
         <nav className='flex ml-auto'>
-          <NavLink
-            exact
-            to='/'
-            activeStyle={{ color: '#fff' }}
-            className='mx-4 text-blue-200 hover:text-white'
-          >
-            Home
-          </NavLink>
-          <NavLink
-            exact
-            to='/about'
-            activeStyle={{ color: '#fff' }}
-            className='mx-4 text-blue-200 hover:text-white'
-          >
-            About
-          </NavLink>
+          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/about'>About</NavLink>
         </nav>
       </div>
     </header>

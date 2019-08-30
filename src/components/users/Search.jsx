@@ -1,6 +1,9 @@
-import React, { Fragment, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import GithubContext from '../../context/github/GithubContext';
 import AlertContext from '../../context/alert/AlertContext';
+import Button from '../UI/Button';
+import Input from '../UI/Input';
+import Card from '../UI/Card';
 
 function Search() {
   const { searchUsers } = useContext(GithubContext);
@@ -21,13 +24,9 @@ function Search() {
   };
 
   return (
-    <Fragment>
-      <form
-        className='w-4/6 flex bg-white shadow-md rounded px-8 py-6 my-8 mx-auto'
-        onSubmit={formSubmitHandler}
-      >
-        <input
-          className='shadow appearance-none border rounded flex-grow py-2 px-3 text-gray-700 leading-tight focus:ouline-none focus:shadow-outline'
+    <form onSubmit={formSubmitHandler}>
+      <Card className='w-4/6 flex px-8 py-6 my-8 mx-auto'>
+        <Input
           type='text'
           name='searchText'
           placeholder='Search Users...'
@@ -36,14 +35,11 @@ function Search() {
           autoFocus
         />
 
-        <button
-          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-6 rounded focus:outline-none focus:shadow-outline'
-          type='submit'
-        >
+        <Button className='ml-6' type='submit' color='primary'>
           Search
-        </button>
-      </form>
-    </Fragment>
+        </Button>
+      </Card>
+    </form>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react';
-import Alert from '../layout/Alert';
+import Alert from '../UI/Alert';
 import Search from '../users/Search';
 import Users from '../users/Users';
 import AlertContext from '../../context/alert/AlertContext';

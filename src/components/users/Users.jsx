@@ -1,7 +1,8 @@
 import React, { Fragment, useContext } from 'react';
 import UserItem from './UserItem';
-import Spinner from '../layout/Spinner';
+import Spinner from '../UI/Spinner';
 import GithubContext from '../../context/github/GithubContext';
+import Button from '../UI/Button';
 
 function Users() {
   const { loading, users, clearUsers } = useContext(GithubContext);
@@ -11,12 +12,14 @@ function Users() {
   return (
     <Fragment>
       {users.length > 0 && (
-        <button
-          className='block font-bold text-sm mx-auto mb-2 text-blue-500 hover:text-blue-800 focus:outline-none'
+        <Button
+          variant='inline'
+          color='primary'
+          className='block mx-auto mb-2'
           onClick={clearUsers}
         >
           Clear Users
-        </button>
+        </Button>
       )}
 
       <div className='flex flex-wrap'>
