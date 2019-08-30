@@ -3,13 +3,9 @@ import PropTypes from 'prop-types';
 
 function RepoItem({ repo }) {
   return (
-    <div className='card'>
-      <h3>
-        <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>
-          {repo.name}
-        </a>
-      </h3>
-    </div>
+    <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>
+      <li className='mb-1 hover:text-blue-600'>{repo.name}</li>
+    </a>
   );
 }
 

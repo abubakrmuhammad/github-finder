@@ -54,7 +54,7 @@ function User({ match }) {
       </Link>
 
       <section className='flex items-start rounded-lg shadow-lg text-gray-900 bg-white py-12 pr-24 mb-6'>
-        <section className='w-2/5 text-center'>
+        <div className='w-2/5 text-center'>
           <img
             src={avatar_url}
             alt={name}
@@ -65,9 +65,9 @@ function User({ match }) {
             <i className='fas fa-map-marker-alt text-blue-500 mr-1' />
             {isAvailable(location)}
           </p>
-        </section>
+        </div>
 
-        <section className='w-3/5'>
+        <div className='w-3/5'>
           <h2 className='text-xl font-bold'>Bio</h2>
           <p className='text-gray-800'>{isAvailable(bio)}</p>
 
@@ -100,10 +100,10 @@ function User({ match }) {
             <span className='font-bold'>Hireable:</span>
             <span>{isHirableIcon(hireable)}</span>
           </div>
-        </section>
+        </div>
       </section>
 
-      <div className='flex justify-center rounded-lg shadow-lg text-xs text-white font-bold bg-white py-6 mb-6'>
+      <section className='flex justify-center rounded-lg shadow-lg text-xs text-white font-bold bg-white py-6 mb-6'>
         <span className='bg-teal-500 py-1 px-3 mr-2 rounded-full'>
           {followers} Followers
         </span>
@@ -116,7 +116,7 @@ function User({ match }) {
         <span className='bg-purple-500 py-1 px-3 mr-2 rounded-full'>
           {public_gists} Public Gists
         </span>
-      </div>
+      </section>
       <Repos repos={repos} />
     </Fragment>
   );
