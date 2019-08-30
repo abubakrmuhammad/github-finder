@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import Alert from '../UI/Alert';
 import Search from '../users/Search';
 import Users from '../users/Users';
-import AlertContext from '../../context/alert/AlertContext';
+import AlertContext from '../../context/alert';
 
 function Home() {
   const { alert, removeAlert } = useContext(AlertContext);

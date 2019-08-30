@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import UserItem from './UserItem';
 import Spinner from '../UI/Spinner';
-import GithubContext from '../../context/github/GithubContext';
+import GithubContext from '../../context/github';
 import Button from '../UI/Button';
 
 function Users() {

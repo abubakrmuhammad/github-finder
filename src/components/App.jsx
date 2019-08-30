@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GithubState from '../context/github/GithubState';
-import AlertState from '../context/alert/AlertState';
+import { GithubState } from '../context/github';
+import { AlertState } from '../context/alert';
 import Navbar from './layout/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';

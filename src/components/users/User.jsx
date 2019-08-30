@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Spinner from '../UI/Spinner';
 import Repos from '../repos/Repos';
-import GithubContext from '../../context/github/GithubContext';
+import GithubContext from '../../context/github';
 import Button from '../UI/Button';
 import Card from '../UI/Card';
 import Badge from '../UI/Badge';

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import GithubContext from '../../context/github/GithubContext';
-import AlertContext from '../../context/alert/AlertContext';
+import GithubContext from '../../context/github';
+import AlertContext from '../../context/alert';
 import Button from '../UI/Button';
 import Input from '../UI/Input';
 import Card from '../UI/Card';
